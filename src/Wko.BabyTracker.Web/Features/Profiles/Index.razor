@@ -1,0 +1,27 @@
+@page "/profiles"
+@using Wko.BabyTracker.Core.Dtos.Profiles
+@using Wko.BabyTracker.Core.Queries.Family
+@inject IDispatcher Dispatcher
+@inject NavigationManager NavigationManager
+<h3>Profiles</h3>
+@foreach (var profile in Profiles)
+{
+    <NavLink @onclick="() => NavigateTo(profile.Id)">
+        <div>@profile.FirstName</div>
+        <div>@profile.FamilyName</div>
+    </NavLink>
+}
+
+@code {
+    private IReadOnlyList<ProfileDto> Profiles { get; set; } = new List<ProfileDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Profiles = await Dispatcher.QueryAsync(new GetFamilyProfiles());
+    }
+
+    private void NavigateTo(Guid id)
+    {
+        NavigationManager.NavigateTo($"timeline/{id}");
+    }
+}
