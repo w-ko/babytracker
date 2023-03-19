@@ -1,6 +1,26 @@
 @page "/timeline"
-<h3>Timeline</h3>
+@page "/timeline/{id:guid}"
+@inject IDispatcher Dispatcher
+
+@if (!ViewModel.IsProfileSelected)
+{
+    <div>Select a Profile</div>
+}
+
+@foreach (var entry in ViewModel.TimelineEntries)
+{
+    <TimelineEntry Entry="entry"/>
+}
 
 @code {
-    
+    [Parameter]
+    public Guid? Id { get; set; }
+
+    private TimelineViewModel ViewModel { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        ViewModel = await TimelineViewModelBuilder.ForChildId(Id).Build(Dispatcher);
+        await base.OnInitializedAsync();
+    }
 }

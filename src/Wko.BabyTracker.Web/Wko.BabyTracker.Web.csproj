@@ -25,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features\Timeline\Components" />
+      <Folder Include="Features\Timeline\Shared" />
     </ItemGroup>
 
 </Project>

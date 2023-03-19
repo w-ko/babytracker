@@ -1,0 +1,18 @@
+@using Wko.BabyTracker.Core.Dtos.Timeline
+<div class="card bg-info">
+    <div class="card-header">
+        Sascha has eaten
+    </div>
+    <div class="card-body">
+        <div>25 minutes ago</div>
+        <div>for 12 minutes, from 14:40 to 15:05</div>
+        <div>40 ml</div>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public TimelineEntryDto Entry { get; set; } = new();
+
+}

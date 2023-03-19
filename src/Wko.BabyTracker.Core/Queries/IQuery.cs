@@ -1,6 +1,6 @@
 namespace Wko.BabyTracker.Core.Queries;
 
-public interface IQuery<T>
+public interface IQuery<in T>
 {
     // Marker Interface
 }
