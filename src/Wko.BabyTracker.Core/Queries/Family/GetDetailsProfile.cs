@@ -5,7 +5,7 @@ namespace Wko.BabyTracker.Core.Queries.Family;
 
 public record GetDetailedProfile(Guid Id) : IQuery<ProfileDto>; 
 
-public class GetDetaildProfileHandler: IQueryHandler<GetDetailedProfile, ProfileDto>
+public class GetDetailedProfileHandler: IQueryHandler<GetDetailedProfile, ProfileDto>
 {
     public async Task<ProfileDto> HandleAsync(GetDetailedProfile query)
     {

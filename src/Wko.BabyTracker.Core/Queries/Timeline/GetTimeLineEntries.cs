@@ -11,13 +11,49 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
     {
         var results = new List<TimelineEntryDto>
         {
-            new TimelineEntryDto
+            new()
             {
                 Id = Guid.NewGuid(),
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Feeding,
                 StartDate = DateTimeOffset.Now.AddMinutes(-20),
+                EndDate = DateTimeOffset.Now
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
+                ChildId = query.ChildId,
+                Body = "Hello World",
+                Type = TimelineEntryType.Sleep,
+                StartDate = DateTimeOffset.Now.AddMinutes(-21),
+                EndDate = DateTimeOffset.Now
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
+                ChildId = query.ChildId,
+                Body = "Hello World",
+                Type = TimelineEntryType.Nappy,
+                StartDate = DateTimeOffset.Now.AddMinutes(-22),
+                EndDate = DateTimeOffset.Now
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
+                ChildId = query.ChildId,
+                Body = "Hello World",
+                Type = TimelineEntryType.Measure,
+                StartDate = DateTimeOffset.Now.AddMinutes(-23),
+                EndDate = DateTimeOffset.Now
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
+                ChildId = query.ChildId,
+                Body = "Hello World",
+                Type = TimelineEntryType.Milestone,
+                StartDate = DateTimeOffset.Now.AddMinutes(-24),
                 EndDate = DateTimeOffset.Now
             }
         };

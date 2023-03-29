@@ -9,7 +9,7 @@
 
 @foreach (var entry in ViewModel.TimelineEntries)
 {
-    <TimelineEntry Entry="entry"/>
+    <TimelineEntry Entry="entry" Child="ViewModel.SelectedProfile"/>
 }
 
 @code {

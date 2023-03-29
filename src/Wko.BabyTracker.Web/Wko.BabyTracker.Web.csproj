@@ -28,4 +28,19 @@
       <Folder Include="Features\Timeline\Shared" />
     </ItemGroup>
 
+    <ItemGroup>
+      <EmbeddedResource Update="Globals\ApplicationLabels.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ApplicationLabels.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Globals\ApplicationLabels.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ApplicationLabels.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>

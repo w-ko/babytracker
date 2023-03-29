@@ -2,7 +2,7 @@ namespace Wko.BabyTracker.Core.Shared.Enums;
 
 public enum TimelineEntryType
 {
-    Nap,
+    Sleep,
     Feeding,
     Nappy,
     Measure,
