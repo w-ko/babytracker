@@ -9,7 +9,10 @@
 
 @foreach (var entry in ViewModel.TimelineEntries)
 {
-    <TimelineEntry Entry="entry" Child="ViewModel.SelectedProfile"/>
+    <TimelineEntry Type="entry.Type">
+        <CardHeader>@ViewModel.GetEntryTitle(entry)</CardHeader>
+        <CardBody>@ViewModel.GetEntryBody(entry)</CardBody>
+    </TimelineEntry>
 }
 
 @code {

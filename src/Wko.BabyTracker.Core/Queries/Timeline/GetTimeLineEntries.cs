@@ -47,6 +47,17 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
                 StartDate = DateTimeOffset.Now.AddMinutes(-23),
                 EndDate = DateTimeOffset.Now
             },
+            
+            new()
+            {
+                Id = Guid.NewGuid(),
+                ChildId = query.ChildId,
+                Body = "Hello World",
+                Type = TimelineEntryType.Measure,
+                StartDate = DateTimeOffset.Now.AddMinutes(-23),
+                EndDate = DateTimeOffset.Now,
+                Measure = new MeasureEntryDto {Type = MeasureType.Height}
+            }, 
             new()
             {
                 Id = Guid.NewGuid(),

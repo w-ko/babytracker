@@ -87,9 +87,15 @@ namespace Wko.BabyTracker.Web.Globals {
             }
         }
         
-        internal static string Timeline_Title_Measure_Temparature {
+        internal static string Timeline_Title_Measure_Temperature {
             get {
-                return ResourceManager.GetString("Timeline_Title_Measure_Temparature", resourceCulture);
+                return ResourceManager.GetString("Timeline_Title_Measure_Temperature", resourceCulture);
+            }
+        }
+        
+        internal static string Timeline_Title_Default {
+            get {
+                return ResourceManager.GetString("Timeline_Title_Default", resourceCulture);
             }
         }
     }

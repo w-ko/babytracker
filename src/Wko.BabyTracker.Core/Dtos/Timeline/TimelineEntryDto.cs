@@ -12,17 +12,19 @@ public class TimelineEntryDto
     public DateTimeOffset? EndDate { get; set; }
 
     public FeedingEntryDto Feeding { get; set; } = new();
-    public SleepEntryDto Sleep { get; set; } = new();
+    public MeasureEntryDto Measure { get; set; } = new();
 }
 
 public class FeedingEntryDto
 {
     public int AmountInMl { get; set; }
+    public int AmountInGrams { get; set; }
     public FeedingType Type { get; set; }
 }
 
-public class SleepEntryDto
+public record MeasureEntryDto
 {
-    
+    public int Circumference { get; set; }
+    public MeasureType Type { get; set; }
 }
 

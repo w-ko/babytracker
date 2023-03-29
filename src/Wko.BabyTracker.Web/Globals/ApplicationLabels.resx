@@ -31,15 +31,18 @@
         <value>{0} new milestone</value>
     </data>
     <data name="Timeline_Title_NappyChange" xml:space="preserve">
-        <value>{0} got a new nappy</value>
+        <value>{0}'s got a new nappy</value>
     </data>
     <data name="Timeline_Title_Measure_Size" xml:space="preserve">
-        <value>{0} current length</value>
+        <value>{0}'s current height</value>
     </data>
     <data name="Timeline_Title_Measure_Weight" xml:space="preserve">
-        <value>{0} current weight</value>
+        <value>{0}'s current weight</value>
     </data>
-    <data name="Timeline_Title_Measure_Temparature" xml:space="preserve">
-        <value>{0} current temparature</value>
+    <data name="Timeline_Title_Measure_Temperature" xml:space="preserve">
+        <value>{0}' current temperature</value>
+    </data>
+    <data name="Timeline_Title_Default" xml:space="preserve">
+        <value>{0}'s entry</value>
     </data>
 </root>
