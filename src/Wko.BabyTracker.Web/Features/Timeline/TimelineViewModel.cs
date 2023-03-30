@@ -35,6 +35,8 @@ public class TimelineViewModel
             _ => ApplicationLabels.Timeline_Title_Default
         };
     }
+    
+    
     public string GetEntryBody(TimelineEntryDto entry)
     {
 

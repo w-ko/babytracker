@@ -2,13 +2,12 @@
 @using Wko.BabyTracker.Core.Shared.Enums
 @using Wko.BabyTracker.Web.Globals
 @using Wko.BabyTracker.Core.Dtos.Profiles
-<div class="card @GetEntryStyle() py-4">
-    <div class="card-header">
-        @CardHeader
+<div class="card card-rounded text-white py-1 @GetEntryStyle()">
+    <div class="card-header d-flex align-items-center">
+        <div class="card-icon text-black-50">@GetEntryIcon()</div>
+        <div class="entry-title">@CardHeader</div>
     </div>
-    <div class="card-body">
-        @CardBody
-    </div>
+    <div class="card-body">@CardBody</div>
 </div>
 
 @code {
@@ -18,21 +17,34 @@
 
     [Parameter, EditorRequired]
     public RenderFragment CardHeader { get; set; } = default!;
-    
+
     [Parameter, EditorRequired]
     public RenderFragment CardBody { get; set; } = default!;
-    
+
     private string GetEntryStyle()
     {
         return Type switch
         {
-            TimelineEntryType.Feeding => "bg-info",
-            TimelineEntryType.Sleep => "bg-success",
-            TimelineEntryType.Measure => "bg-warning",
-            TimelineEntryType.Milestone => "bg-primary",
-            TimelineEntryType.Nappy => "bg-secondary",
+            TimelineEntryType.Feeding => "bg-feeding",
+            TimelineEntryType.Sleep => "bg-sleep",
+            TimelineEntryType.Measure => "bg-measure",
+            TimelineEntryType.Milestone => "bg-milestone",
+            TimelineEntryType.Nappy => "bg-nappy",
             _ => "bg-light"
-        };
+            };
+    }
+
+    private RenderFragment GetEntryIcon()
+    {
+        return Type switch
+        {
+            TimelineEntryType.Feeding => @<i class="fa-solid fa-utensils"></i>,
+            TimelineEntryType.Sleep => @<i class="fa-solid fa-bed"></i>,
+            TimelineEntryType.Measure => @<i class="fa-solid fa-scale-balanced"></i>,
+            TimelineEntryType.Milestone => @<i class="fa-solid fa-award"></i>,
+            TimelineEntryType.Nappy => @<i class="fa-solid fa-poop"></i>,
+            _ => @<i class="fa-solid fa-utensils"></i>
+            };
     }
 
 }

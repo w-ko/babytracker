@@ -1,3 +1,42 @@
 .card + .card {
     margin-top: 2em;
 }
+
+.card-rounded {
+    border-radius: 1em;
+}
+
+.card-icon {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon + .entry-title {
+    margin-left: 1.1em;
+}
+
+.bg-measure {
+    background-color: var(--measure-primary);
+}
+
+.bg-feeding {
+    background-color: var(--feeding-primary);
+}
+
+.bg-nappy {
+    background-color: var(--nappy-primary);
+}
+
+.bg-sleep {
+    background-color: var(--sleeping-primary);
+}
+
+.bg-milestone {
+    background-color: var(--milestone-primary);
+}
+
