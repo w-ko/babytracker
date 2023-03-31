@@ -20,11 +20,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <AdditionalFiles Include="Features\Identity\Pages\Account\LogOut.cshtml" />
-      <AdditionalFiles Include="Features\Identity\Pages\Shared\_LoginPartial.cshtml" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Folder Include="Features\Timeline\Shared" />
       <Folder Include="wwwroot\fontawesomefree" />
     </ItemGroup>
