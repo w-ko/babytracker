@@ -6,6 +6,8 @@ riderModule.iml
 app.db
 /.idea
 
+dist/
+
 # Specific to the EFCore-Blazor sample app
 *.db
 *.db-shm

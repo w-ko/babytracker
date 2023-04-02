@@ -1,3 +1,3 @@
 import {setupCounter} from "./sample.js"
 
-setupCounter(document.getElementById("counter"))
+setupCounter("not")

@@ -63,4 +63,9 @@
       <ProjectReference Include="..\Wko.BabyTracker.Core\Wko.BabyTracker.Core.csproj" />
     </ItemGroup>
 
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+        <Exec Command="npm install" WorkingDirectory="wwwroot/js/src" />
+        <Exec Command="npm run build" WorkingDirectory="wwwroot/js/src" />
+    </Target>
+
 </Project>

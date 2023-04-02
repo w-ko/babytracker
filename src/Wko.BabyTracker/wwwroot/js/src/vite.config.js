@@ -10,12 +10,12 @@ export default defineConfig({
             output: {
                 manualChunks: false,
                 inlineDynamicImports: true,
-                entryFileNames: '[name].js',
-                assetFileNames: 'bundled.min.[ext]',
+                entryFileNames: 'bundled.min.js',
+                assetFileNames: '[name].[ext]',
             }
             
         },
-        outDir: '../',
+        outDir: '../dist',
         emptyOutDir: true,
     },
 })
