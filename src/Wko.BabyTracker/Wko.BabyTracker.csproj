@@ -28,7 +28,6 @@
 
     <ItemGroup>
       <Folder Include="Features\Timeline\Shared" />
-      <Folder Include="wwwroot\js\src" />
     </ItemGroup>
 
     <ItemGroup>
