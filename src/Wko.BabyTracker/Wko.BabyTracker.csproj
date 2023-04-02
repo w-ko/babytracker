@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.4" PrivateAssets="all" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Features\Home\Index.razor" />
+      <AdditionalFiles Include="Features\Home\SurveyPrompt.razor" />
+      <AdditionalFiles Include="Features\Profiles\Components\EditProfile.razor" />
+      <AdditionalFiles Include="Features\Profiles\Index.razor" />
+      <AdditionalFiles Include="Features\Profiles\_Imports.razor" />
+      <AdditionalFiles Include="Features\Shared\MainLayout.razor" />
+      <AdditionalFiles Include="Features\Shared\NavMenu.razor" />
+      <AdditionalFiles Include="Features\Timeline\Components\SelectedProfile.razor" />
+      <AdditionalFiles Include="Features\Timeline\Components\TimelineEntry.razor" />
+      <AdditionalFiles Include="Features\Timeline\Components\TimelineFilter.razor" />
+      <AdditionalFiles Include="Features\Timeline\Index.razor" />
+      <AdditionalFiles Include="Features\Timeline\_Imports.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Features\Timeline\Shared" />
+      <Folder Include="wwwroot\js\src" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Shared\MainLayout.razor" />
+      <_ContentIncludedByDefault Remove="Shared\NavMenu.razor" />
+      <_ContentIncludedByDefault Remove="Shared\SurveyPrompt.razor" />
+      <_ContentIncludedByDefault Remove="Features\Host\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Features\Host\_Host.cshtml" />
+      <_ContentIncludedByDefault Remove="Features\Host\App.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Globals\ApplicationLabels.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ApplicationLabels.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Globals\ApplicationLabels.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ApplicationLabels.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Globals\ApplicationLabels.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ApplicationLabels.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Wko.BabyTracker.Core\Wko.BabyTracker.Core.csproj" />
+    </ItemGroup>
+
+</Project>
