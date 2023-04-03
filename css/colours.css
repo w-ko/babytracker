@@ -1,0 +1,23 @@
+:root {
+    --primary-bg-dark: #13151D;
+    
+    --feeding-primary: #009AE1;
+    --feeding-primary-header: #0078B4;
+    --feeding-secondary: #005985;
+
+    --sleeping-primary: #3E6844;
+    --sleeping-primary-header: #365A3B;
+    --sleeping-secondary: #28442C;
+
+    --milestone-primary: #812C2C;
+    --milestone-primary-header: #722626;
+    --milestone-secondary: #5B1E1E;
+
+    --nappy-primary: #48A1AF;
+    --nappy-primary-header: #337882;
+    --nappy-secondary: #337882;
+
+    --measure-primary: #527B78;
+    --measure-primary-header: #4A6B69;
+    --measure-secondary: #385553;
+}
