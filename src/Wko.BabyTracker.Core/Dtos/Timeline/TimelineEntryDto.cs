@@ -13,9 +13,10 @@ public class TimelineEntryDto
 
     public FeedingEntryDto Feeding { get; set; } = new();
     public MeasureEntryDto Measure { get; set; } = new();
+    public NappyEntryDto Nappy { get; set; } = new();
 }
 
-public class FeedingEntryDto
+public record FeedingEntryDto
 {
     public int AmountInMl { get; set; }
     public int AmountInGrams { get; set; }
@@ -27,4 +28,11 @@ public record MeasureEntryDto
     public int Circumference { get; set; }
     public MeasureType Type { get; set; }
 }
+
+public record NappyEntryDto
+{
+    public NappyType Type { get; set; }
+    public PooColour PooColour { get; set; }
+}
+
 

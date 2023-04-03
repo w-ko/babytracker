@@ -4,6 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
     </PropertyGroup>
 
     <ItemGroup>
@@ -61,6 +62,10 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Wko.BabyTracker.Core\Wko.BabyTracker.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ServiceWorker Include="wwwroot\js\service-worker.js" PublishedContent="wwwroot\js\service-worker.published.js" />
     </ItemGroup>
 
     <Target Name="PreBuild" BeforeTargets="PreBuildEvent">

@@ -1,3 +1,1 @@
-import {setupCounter} from "./sample.js"
-
-setupCounter("not")
+import {db} from "./db.js";
