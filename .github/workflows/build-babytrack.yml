@@ -26,7 +26,7 @@ jobs:
       - name: Test
         run: dotnet test --no-restore --verbosity normal
       - name: Publish
-        run: dotnet publish --configuration Release --no-build --no-restore --output ./publish
+        run: dotnet publish src/Wko.BabyTracker/Wko.BabyTracker.csproj --configuration Release --no-build --no-restore --output ./publish
       - name: Change base-tag in index.html from / to BabyTracker
         run: sed -i 's/<base href="\/" \/>/<base href="\/BabyTracker\/" \/>/g' publish/wwwroot/index.html
       - name: Add .nojekyll file
