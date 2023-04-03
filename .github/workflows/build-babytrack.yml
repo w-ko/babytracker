@@ -22,3 +22,16 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
+      - name: Publish
+        run: dotnet publish --configuration Release --no-build --no-restore --output ./publish
+      - name: Change base-tag in index.html from / to BabyTracker
+        run: sed -i 's/<base href="\/" \/>/<base href="\/BabyTracker\/" \/>/g' publish/wwwroot/index.html
+      - name: Add .nojekyll file
+        run: touch publish/wwwroot/.nojekyll
+      - name: Commit wwwroot to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: demo
+          FOLDER: publish/wwwroot
+        
