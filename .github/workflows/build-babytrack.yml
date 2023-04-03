@@ -5,6 +5,9 @@ on: [push]
 jobs:
   build:
 
+    permissions:
+      content: write
+
     runs-on: ubuntu-latest
     strategy:
       matrix:
