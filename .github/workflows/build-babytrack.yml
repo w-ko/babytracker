@@ -55,7 +55,8 @@ jobs:
           fi
           done
           
-          echo -n "$jsFile" > service-worker-assets.js
+          echo -n "$jsFile" > js/service-worker-assets.js
+          
       - name: Add .nojekyll file
         run: touch publish/wwwroot/.nojekyll
       - name: Commit wwwroot to GitHub Pages
