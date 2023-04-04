@@ -9,8 +9,8 @@ export default defineConfig({
 
         lib: {
             entry: 'main.js',
-            name: 'BabyTracker',
-            formats: ["es"],
+            name: 'babyTracker',
+            formats: ["iife"],
             fileName: 'bundled.min',
         },
 

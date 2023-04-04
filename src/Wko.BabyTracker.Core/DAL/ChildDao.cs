@@ -12,24 +12,24 @@ public class ChildDao
         _jsRuntime = jsRuntime;
     }
     
-    public async Task<Child> GetById(Guid id)
+    public async Task<Child> GetById(int id)
     {
-        return await _jsRuntime.InvokeAsync<Child>("getChild", id);
+        return await _jsRuntime.InvokeAsync<Child>("babyTracker.getChild", id);
     }
     
     public async Task<Child> Create(Child child)
     {
-        return await _jsRuntime.InvokeAsync<Child>("createChild", child);
+        return await _jsRuntime.InvokeAsync<Child>("babyTracker.createChild", child);
     }
     
     public async Task<Child> Update(Child child)
     {
-        return await _jsRuntime.InvokeAsync<Child>("updateChild", child.Id, child);
+        return await _jsRuntime.InvokeAsync<Child>("babyTracker.updateChild", child.Id, child);
     }
     
-    public async Task Delete(Guid id)
+    public async Task Delete(int id)
     {
-        await _jsRuntime.InvokeVoidAsync("deleteChild", id);
+        await _jsRuntime.InvokeVoidAsync("babyTracker.deleteChild", id);
     }
     
 }

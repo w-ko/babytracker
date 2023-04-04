@@ -1,10 +1,14 @@
 @page "/timeline"
 @page "/timeline/{id:int}"
+@using Wko.BabyTracker.Core.DAL
+@using Wko.BabyTracker.Core.Domain.Entities
+@using TimelineEntry = Wko.BabyTracker.Features.Timeline.Components.TimelineEntry
 @inject IDispatcher Dispatcher
+@inject ChildDao ChildDao
 
 @if (!ViewModel.IsProfileSelected)
 {
-    <div>Select a Profile</div>
+    <div @onclick="CallInterop">Select a Profile</div>
 }
 
 @foreach (var entry in ViewModel.TimelineEntries)
@@ -25,5 +29,10 @@
     {
         ViewModel = await TimelineViewModelBuilder.ForChildId(Id).Build(Dispatcher);
         await base.OnInitializedAsync();
+    }
+
+    private async Task CallInterop()
+    {
+        await ChildDao.Create(new Child {Name = "Hugo"});
     }
 }

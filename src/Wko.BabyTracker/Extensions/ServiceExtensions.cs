@@ -1,4 +1,5 @@
 using Wko.BabyTracker.Core.Commands;
+using Wko.BabyTracker.Core.DAL;
 using Wko.BabyTracker.Core.Queries;
 using Wko.BabyTracker.Core.Services;
 
@@ -9,6 +10,8 @@ public static class ServiceExtensions
     public static void AddAppServices(this IServiceCollection services)
     {
         services.AddSingleton<IDispatcher, Dispatcher>();
+        services.AddTransient<TimelineDao>();
+        services.AddTransient<ChildDao>();
         services.AddHandlers(typeof(IQueryHandler<,>));
         services.AddHandlers(typeof(ICommandHandler<>));
     }
