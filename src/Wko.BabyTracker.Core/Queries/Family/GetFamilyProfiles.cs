@@ -9,8 +9,8 @@ public class GetFamilyProfilesHandler: IQueryHandler<GetFamilyProfiles, List<Pro
     {
         return new List<ProfileDto>
         {
-            new ProfileDto {Id = Guid.NewGuid(), FirstName = "John", FamilyName = "Doe"},
-            new ProfileDto {Id = Guid.NewGuid(), FirstName = "Jane", FamilyName = "Doe"}
+            new ProfileDto {Id = 1, FirstName = "John", FamilyName = "Doe"},
+            new ProfileDto {Id = 2, FirstName = "Jane", FamilyName = "Doe"}
         };
     }
 }

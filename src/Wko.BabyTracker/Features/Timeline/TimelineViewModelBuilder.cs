@@ -6,10 +6,10 @@ namespace Wko.BabyTracker.Features.Timeline;
 
 public class TimelineViewModelBuilder
 {
-    private readonly Guid? _childId;
+    private readonly int? _childId;
 
-    private TimelineViewModelBuilder(Guid? childId) => _childId = childId;
-    public static TimelineViewModelBuilder ForChildId(Guid? id) => new(id);
+    private TimelineViewModelBuilder(int? childId) => _childId = childId;
+    public static TimelineViewModelBuilder ForChildId(int? id) => new(id);
 
     public async Task<TimelineViewModel> Build(IDispatcher dispatcher)
     {

@@ -3,7 +3,7 @@ using Wko.BabyTracker.Core.Shared.Enums;
 
 namespace Wko.BabyTracker.Core.Queries.Timeline;
 
-public record GetTimeLineEntries(Guid ChildId): PagedQuery<PagedResult<TimelineEntryDto>>;
+public record GetTimeLineEntries(int ChildId): PagedQuery<PagedResult<TimelineEntryDto>>;
 
 public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, PagedResult<TimelineEntryDto>>
 {
@@ -13,7 +13,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
         {
             new()
             {
-                Id = Guid.NewGuid(),
+                Id = 1,
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Feeding,
@@ -22,7 +22,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
             },
             new()
             {
-                Id = Guid.NewGuid(),
+                Id = 2,
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Sleep,
@@ -31,7 +31,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
             },
             new()
             {
-                Id = Guid.NewGuid(),
+                Id = 3,
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Nappy,
@@ -40,7 +40,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
             },
             new()
             {
-                Id = Guid.NewGuid(),
+                Id = 4,
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Measure,
@@ -50,7 +50,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
             
             new()
             {
-                Id = Guid.NewGuid(),
+                Id = 4,
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Measure,
@@ -60,7 +60,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
             }, 
             new()
             {
-                Id = Guid.NewGuid(),
+                Id = 6,
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Milestone,

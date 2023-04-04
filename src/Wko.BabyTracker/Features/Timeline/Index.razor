@@ -1,5 +1,5 @@
 @page "/timeline"
-@page "/timeline/{id:guid}"
+@page "/timeline/{id:int}"
 @inject IDispatcher Dispatcher
 
 @if (!ViewModel.IsProfileSelected)
@@ -17,7 +17,7 @@
 
 @code {
     [Parameter]
-    public Guid? Id { get; set; }
+    public int? Id { get; set; }
 
     private TimelineViewModel ViewModel { get; set; } = new();
 

@@ -3,7 +3,7 @@ using Wko.BabyTracker.Core.Dtos.Profiles;
 namespace Wko.BabyTracker.Core.Queries.Family;
 
 
-public record GetDetailedProfile(Guid Id) : IQuery<ProfileDto>; 
+public record GetDetailedProfile(int Id) : IQuery<ProfileDto>; 
 
 public class GetDetailedProfileHandler: IQueryHandler<GetDetailedProfile, ProfileDto>
 {

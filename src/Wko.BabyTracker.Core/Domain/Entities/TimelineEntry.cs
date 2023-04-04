@@ -1,38 +1,37 @@
 using Wko.BabyTracker.Core.Shared.Enums;
 
-namespace Wko.BabyTracker.Core.Dtos.Timeline;
+namespace Wko.BabyTracker.Core.Domain.Entities;
 
-public class TimelineEntryDto
+public class TimelineEntry
 {
     public int Id { get; set; }
     public int ChildId { get; set; }
     public TimelineEntryType Type { get; set; }
     public string Body { get; set; } = string.Empty;
-    public DateTimeOffset StartDate { get; set; } = DateTimeOffset.Now;
-    public DateTimeOffset? EndDate { get; set; }
+    public DateTimeOffset Start { get; set; } = DateTimeOffset.Now;
+    public DateTimeOffset? End { get; set; }
 
-    public FeedingEntryDto Feeding { get; set; } = new();
-    public MeasureEntryDto Measure { get; set; } = new();
-    public NappyEntryDto Nappy { get; set; } = new();
+    public FeedingEntry Feeding { get; set; } = new();
+    public MeasureEntry Measure { get; set; } = new();
+    public NappyEntry Nappy { get; set; } = new();
 }
 
-public record FeedingEntryDto
+
+public record FeedingEntry
 {
     public int AmountInMl { get; set; }
     public int AmountInGrams { get; set; }
     public FeedingType Type { get; set; }
 }
 
-public record MeasureEntryDto
+public record MeasureEntry
 {
     public int Circumference { get; set; }
     public MeasureType Type { get; set; }
 }
 
-public record NappyEntryDto
+public record NappyEntry
 {
     public NappyType Type { get; set; }
     public PooColour PooColour { get; set; }
 }
-
-

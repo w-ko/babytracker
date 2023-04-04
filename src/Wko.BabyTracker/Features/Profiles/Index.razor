@@ -20,7 +20,7 @@
         Profiles = await Dispatcher.QueryAsync(new GetFamilyProfiles());
     }
 
-    private void NavigateTo(Guid id)
+    private void NavigateTo(int id)
     {
         NavigationManager.NavigateTo($"timeline/{id}");
     }

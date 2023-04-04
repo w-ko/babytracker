@@ -2,7 +2,7 @@ import Dexie from "dexie";
 
 export let db = new Dexie("BabyTracker");
 
-db.version(2).stores({
+db.version(1).stores({
     children: `++id,
     name,
     birthDate`,
@@ -17,7 +17,3 @@ db.version(2).stores({
     measure,
     nappy`
 });
-
-db.children.add({name: "Max", birthDate: new Date(2017, 1, 1)});
-
-
