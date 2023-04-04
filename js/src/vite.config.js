@@ -1,21 +1,21 @@
-import { defineConfig } from 'vite'
+import {defineConfig} from 'vite'
 
 export default defineConfig({
+    esbuild: {
+        minifyIdentifiers: false,
+    },
     build: {
         sourcemap: true,
-        
-        rollupOptions: {
-            // overwrite default .html entry
-            input: 'main.js',
-            output: {
-                manualChunks: false,
-                inlineDynamicImports: true,
-                entryFileNames: 'bundled.min.js',
-                assetFileNames: '[name].[ext]',
-            }
-            
+
+        lib: {
+            entry: 'main.js',
+            name: 'BabyTracker',
+            formats: ["es"],
+            fileName: 'bundled.min',
         },
+
         outDir: '../dist',
         emptyOutDir: true,
+        
     },
 })
