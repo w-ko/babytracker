@@ -30,12 +30,12 @@
       "System.Net.Primitives.dll": "sha256-UzhUUxrHva0ha5CEjSRop9\/VyIRywS0ycCVV2Xjp3Zo=",
       "System.Private.CoreLib.dll": "sha256-B875CpdiVfqtRH43daYs4qqKnyhdPOWkshZOZpu2Hpo=",
       "System.Private.Uri.dll": "sha256-pbFUokt9hznmSWGBrAYsM8MFbeHQ7wVtxPBP\/UKsRwo=",
-      "System.Runtime.dll": "sha256-s6n4UF184K\/8s4n51T2DHxRHgipfI0LqdlCea16HWWw=",
+      "System.Runtime.dll": "sha256-6OoE5SNHeAVk8vsb+EpoWW661flR2dVxH2Rnv8ddJh0=",
       "System.Runtime.InteropServices.JavaScript.dll": "sha256-l3LOpn41IENvd+HSuUnRyB6aRoKuvrUE4SnHt\/pEs1Y=",
       "System.Text.Encodings.Web.dll": "sha256-7lN0bLZ2wqjP7HBE0pmfRmbaM5+hmCOr0GjEwtOXu50=",
-      "System.Text.Json.dll": "sha256-0ZgnMsiKplG+MGTDnMX1wtP7KnYX7B0QPJcBBkwjfdw=",
-      "Wko.BabyTracker.Core.dll": "sha256-7iW7hfMYcGdv3ENgoZ7LBhBWhBdSSwuXGKzWJAOQ7go=",
-      "Wko.BabyTracker.dll": "sha256-721gYdgajj2NXQubnCx5vUF6bfo1zdwoHJwbDftICEE="
+      "System.Text.Json.dll": "sha256-6LQgx84Tegk39QBAyoFHzoXabQTK4id\/ht1uDoEi8Yo=",
+      "Wko.BabyTracker.Core.dll": "sha256-1uBqVJhHl5C5PbD+09WeXEHJ8PgzPet9phLq3yF+jvg=",
+      "Wko.BabyTracker.dll": "sha256-nygMOMZi76w\/K5Oed2myYdQDsbviL0\/ARt3MI62b8LU="
     },
     "extensions": null,
     "lazyAssembly": null,
