@@ -3,11 +3,14 @@ import Dexie from "dexie";
 export let db = new Dexie("BabyTracker");
 
 db.version(1).stores({
-    children: `++id,
+  children: `
+    ++id,
     name,
-    birthDate`,
-    
-    timeline: `++id,
+    birthDate
+    `,
+
+  timeline: `
+    ++id,
     childId,
     type,
     start,
@@ -15,5 +18,6 @@ db.version(1).stores({
     note,
     feeding,
     measure,
-    nappy`
+    nappy
+    `,
 });

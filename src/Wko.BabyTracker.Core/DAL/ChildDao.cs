@@ -11,25 +11,30 @@ public class ChildDao
     {
         _jsRuntime = jsRuntime;
     }
-    
+
+    public async Task<Child[]> GetChildren()
+    {
+        return await _jsRuntime.InvokeAsync<Child[]>("childRepository.getChildren");
+    }
+
     public async Task<Child> GetById(int id)
     {
-        return await _jsRuntime.InvokeAsync<Child>("babyTracker.getChild", id);
+        return await _jsRuntime.InvokeAsync<Child>("childRepository.getChild", id);
     }
     
-    public async Task<Child> Create(Child child)
+    public async Task Create(Child child)
     {
-        return await _jsRuntime.InvokeAsync<Child>("babyTracker.createChild", child);
+        await _jsRuntime.InvokeAsync<Child>("childRepository.createChild", child);
     }
     
     public async Task<Child> Update(Child child)
     {
-        return await _jsRuntime.InvokeAsync<Child>("babyTracker.updateChild", child.Id, child);
+        return await _jsRuntime.InvokeAsync<Child>("childRepository.updateChild", child.Id, child);
     }
     
     public async Task Delete(int id)
     {
-        await _jsRuntime.InvokeVoidAsync("babyTracker.deleteChild", id);
+        await _jsRuntime.InvokeVoidAsync("childRepository.deleteChild", id);
     }
     
 }

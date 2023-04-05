@@ -4,8 +4,8 @@ namespace Wko.BabyTracker.Core.Dtos.Timeline;
 
 public class TimelineEntryDto
 {
-    public int Id { get; set; }
-    public int ChildId { get; set; }
+    public Guid Id { get; set; }
+    public Guid ChildId { get; set; }
     public TimelineEntryType Type { get; set; }
     public string Body { get; set; } = string.Empty;
     public DateTimeOffset StartDate { get; set; } = DateTimeOffset.Now;

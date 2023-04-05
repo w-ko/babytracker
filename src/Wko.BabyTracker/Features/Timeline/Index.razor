@@ -1,5 +1,5 @@
 @page "/timeline"
-@page "/timeline/{id:int}"
+@page "/timeline/{id:guid}"
 @using Wko.BabyTracker.Core.DAL
 @using Wko.BabyTracker.Core.Domain.Entities
 @using TimelineEntry = Wko.BabyTracker.Features.Timeline.Components.TimelineEntry
@@ -9,6 +9,11 @@
 @if (!ViewModel.IsProfileSelected)
 {
     <div @onclick="CallInterop">Select a Profile</div>
+}
+
+@foreach(var child in Children)
+{
+    <div>@child.Name</div>
 }
 
 @foreach (var entry in ViewModel.TimelineEntries)
@@ -21,7 +26,9 @@
 
 @code {
     [Parameter]
-    public int? Id { get; set; }
+    public Guid? Id { get; set; }
+    
+    private Child[] Children { get; set; } = Array.Empty<Child>();
 
     private TimelineViewModel ViewModel { get; set; } = new();
 
@@ -33,6 +40,8 @@
 
     private async Task CallInterop()
     {
-        await ChildDao.Create(new Child {Name = "Hugo"});
+        Children = await ChildDao.GetChildren();
+        await ChildDao.Create(new Child {Name = "Ben"});
+        StateHasChanged();
     }
 }
