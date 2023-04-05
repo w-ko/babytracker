@@ -1,16 +1,28 @@
+using Microsoft.JSInterop;
+using Wko.BabyTracker.Core.Domain.Entities;
 using Wko.BabyTracker.Core.Dtos.Profiles;
 
 namespace Wko.BabyTracker.Core.Queries.Family;
 
-public record GetFamilyProfiles() : IQuery<List<ProfileDto>>;
-public class GetFamilyProfilesHandler: IQueryHandler<GetFamilyProfiles, List<ProfileDto>>
+public record GetFamilyProfiles : IQuery<IEnumerable<ProfileDto>>;
+public class GetFamilyProfilesHandler: IQueryHandler<GetFamilyProfiles, IEnumerable<ProfileDto>>
 {
-    public async Task<List<ProfileDto>> HandleAsync(GetFamilyProfiles query)
+    private readonly IJSRuntime _jsRuntime;
+    public GetFamilyProfilesHandler(IJSRuntime jsRuntime) => _jsRuntime = jsRuntime;
+
+    public async Task<IEnumerable<ProfileDto>> HandleAsync(GetFamilyProfiles query)
     {
-        return new List<ProfileDto>
+        var children = await _jsRuntime.InvokeAsync<Child[]>("childRepository.getChildren");
+        if (!children.Any()) return Enumerable.Empty<ProfileDto>();
+
+        return children.Select(child => new ProfileDto
         {
-            new ProfileDto {Id = Guid.NewGuid(), FirstName = "John", FamilyName = "Doe"},
-            new ProfileDto {Id = Guid.NewGuid(), FirstName = "Jane", FamilyName = "Doe"}
-        };
+            Id = child.Id,
+            FirstName = child.Name,
+            AgeInDays = child.Age.Days,
+            AgeInWeeks = child.Age.Weeks,
+            AgeInMonths = child.Age.Months,
+            AgeInYears = child.Age.Years
+        });
     }
 }

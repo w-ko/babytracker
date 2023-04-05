@@ -21,6 +21,16 @@ public record Age
         }
     }
 
+    public decimal Weeks
+    {
+        get
+        {
+            var timeSpan = (DateTimeOffset.Now - _birthDay);
+            if (!timeSpan.HasValue) return Calendar.DefaultWeeks;
+            return (decimal)timeSpan.Value.TotalDays / Calendar.DaysInWeek;
+        }
+    }
+
     public decimal Months
     {
         get

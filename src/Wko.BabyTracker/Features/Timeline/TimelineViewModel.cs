@@ -7,7 +7,7 @@ namespace Wko.BabyTracker.Features.Timeline;
 
 public class TimelineViewModel
 {
-    private readonly IReadOnlyList<TimelineEntryDto> _timelineEntries = new List<TimelineEntryDto>();
+    private readonly IEnumerable<TimelineEntryDto> _timelineEntries = new List<TimelineEntryDto>();
 
     public TimelineViewModel()
     {
@@ -19,13 +19,13 @@ public class TimelineViewModel
     public bool HasActiveFilter => ActiveFilter != null;
     public TimelineEntryType? ActiveFilter { get; set; }
 
-    public IReadOnlyList<TimelineEntryDto> TimelineEntries
+    public IEnumerable<TimelineEntryDto> TimelineEntries
     {
         get => _timelineEntries.OrderByDescending(entry => entry.StartDate).ToList();
         init => _timelineEntries = value;
     }
 
-    public IReadOnlyList<ProfileDto> AvailableProfiles { get; set; }
+    public IEnumerable<ProfileDto> AvailableProfiles { get; set; }
     public ProfileDto? SelectedProfile { get; set; }
     
     public string GetEntryTitle(TimelineEntryDto entryDto)
