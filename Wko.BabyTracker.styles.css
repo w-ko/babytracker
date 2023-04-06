@@ -84,13 +84,6 @@ main[b-etxkjfn9lj] {
     font-size: 1.1rem;
 }
 
-.oi[b-dxxm701xsy] {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
-}
-
 .nav-item[b-dxxm701xsy] {
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
@@ -142,17 +135,21 @@ main[b-etxkjfn9lj] {
 
 .fa-solid + span[b-dxxm701xsy] {
     margin-left: 0.5em;
-    padding-top: 0.5em;
 }
-
-
 /* /Features/Timeline/Components/TimelineEntry.razor.rz.scp.css */
 .card + .card[b-moicy3c9hb] {
     margin-top: 2em;
 }
 
 .card-rounded[b-moicy3c9hb] {
+    border: none;
     border-radius: 1em;
+}
+
+.card-header-rounded[b-moicy3c9hb] {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border: none;
 }
 
 .card-icon[b-moicy3c9hb] {
@@ -173,19 +170,39 @@ main[b-etxkjfn9lj] {
     background-color: var(--measure-primary);
 }
 
+.bg-measure--header[b-moicy3c9hb] {
+    background-color: var(--measure-primary-header);
+}
+
 .bg-feeding[b-moicy3c9hb] {
     background-color: var(--feeding-primary);
+}
+
+.bg-feeding--header[b-moicy3c9hb] {
+    background-color: var(--feeding-primary-header);
 }
 
 .bg-nappy[b-moicy3c9hb] {
     background-color: var(--nappy-primary);
 }
 
+.bg-nappy--header[b-moicy3c9hb] {
+    background-color: var(--nappy-primary-header);
+}
+
 .bg-sleep[b-moicy3c9hb] {
     background-color: var(--sleeping-primary);
 }
 
+.bg-sleep--header[b-moicy3c9hb] {
+    background-color: var(--sleeping-primary-header);
+}
+
 .bg-milestone[b-moicy3c9hb] {
     background-color: var(--milestone-primary);
+}
+
+.bg-milestone--header[b-moicy3c9hb] {
+    background-color: var(--milestone-primary-header);
 }
 
