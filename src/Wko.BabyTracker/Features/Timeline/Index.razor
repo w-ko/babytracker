@@ -6,7 +6,7 @@
 @if (!ViewModel.IsProfileSelected)
 {
     <div>Select a Profile</div>
-    @foreach(var profile in ViewModel.AvailableProfiles)
+    @foreach (var profile in ViewModel.AvailableProfiles)
     {
         <a class="badge" href="timeline/@profile.Id">@profile.FirstName</a>
     }
@@ -17,18 +17,22 @@
     <img src="svg/no_profiles.svg" alt="No entries available" class="opacity-25"/>
 }
 
-@foreach (var entry in ViewModel.TimelineEntries)
+@foreach (var group in ViewModel.TimelineGroups)
 {
-    <TimelineEntry Type="entry.Type">
-        <CardHeader>@ViewModel.GetEntryTitle(entry)</CardHeader>
-        <CardBody>@ViewModel.GetEntryBody(entry)</CardBody>
-    </TimelineEntry>
+    <div class="timeline-group">@group</div>
+    @foreach (var entry in ViewModel.GetTimelineEntriesByGroup(group))
+    {
+        <TimelineEntry Type="@entry.Type">
+            <CardHeader>@ViewModel.GetEntryTitle(entry)</CardHeader>
+            <CardBody>@ViewModel.GetEntryBody(entry)</CardBody>
+        </TimelineEntry>
+    }
 }
 
 @code {
-    [Parameter]
-    public Guid? Id { get; set; }
-    
+
+    [Parameter] public Guid? Id { get; set; }
+
     private TimelineViewModel ViewModel { get; set; } = new();
 
     protected override async Task OnParametersSetAsync()

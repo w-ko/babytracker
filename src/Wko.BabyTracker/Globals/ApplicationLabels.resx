@@ -28,7 +28,7 @@
         <value>{0} current head circumference</value>
     </data>
     <data name="Timeline_Title_Milestone" xml:space="preserve">
-        <value>{0} new milestone</value>
+        <value>{0}'s new milestone</value>
     </data>
     <data name="Timeline_Title_NappyChange" xml:space="preserve">
         <value>{0}'s got a new nappy</value>

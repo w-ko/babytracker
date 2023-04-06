@@ -17,7 +17,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Feeding,
-                StartDate = DateTimeOffset.Now.AddMinutes(-20),
+                StartDate = DateTimeOffset.Now.AddDays(-20),
                 EndDate = DateTimeOffset.Now
             },
             new()
@@ -26,7 +26,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Sleep,
-                StartDate = DateTimeOffset.Now.AddMinutes(-21),
+                StartDate = DateTimeOffset.Now.AddDays(-21),
                 EndDate = DateTimeOffset.Now
             },
             new()
@@ -35,7 +35,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Nappy,
-                StartDate = DateTimeOffset.Now.AddMinutes(-22),
+                StartDate = DateTimeOffset.Now.AddDays(-22),
                 EndDate = DateTimeOffset.Now
             },
             new()
@@ -44,7 +44,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Measure,
-                StartDate = DateTimeOffset.Now.AddMinutes(-23),
+                StartDate = DateTimeOffset.Now.AddDays(-23),
                 EndDate = DateTimeOffset.Now
             },
             
@@ -54,7 +54,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Measure,
-                StartDate = DateTimeOffset.Now.AddMinutes(-23),
+                StartDate = DateTimeOffset.Now.AddDays(-23),
                 EndDate = DateTimeOffset.Now,
                 Measure = new MeasureEntryDto {Type = MeasureType.Height}
             }, 
@@ -64,7 +64,7 @@ public class GetTimeLineEntriesHandler : IQueryHandler<GetTimeLineEntries, Paged
                 ChildId = query.ChildId,
                 Body = "Hello World",
                 Type = TimelineEntryType.Milestone,
-                StartDate = DateTimeOffset.Now.AddMinutes(-24),
+                StartDate = DateTimeOffset.Now.AddDays(-24),
                 EndDate = DateTimeOffset.Now
             }
         };

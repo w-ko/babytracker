@@ -25,10 +25,21 @@ public class TimelineViewModel
         init => _timelineEntries = value;
     }
 
+    public IOrderedEnumerable<DateOnly> TimelineGroups => TimelineEntries
+        .Select(entry => DateOnly.FromDateTime(entry.StartDate.Date))
+        .Distinct()
+        .OrderByDescending(date => date);
+
+    public IEnumerable<TimelineEntryDto> GetTimelineEntriesByGroup(DateOnly group)
+    {
+        var isSameDate = (TimelineEntryDto entry) => DateOnly.FromDateTime(entry.StartDate.Date) == group;
+        return TimelineEntries.Where(isSameDate);
+    }
+
     public IEnumerable<ProfileDto> AvailableProfiles { get; set; }
     public ProfileDto? SelectedProfile { get; set; }
     public bool HasTimelineEntries => IsProfileSelected && TimelineEntries.Any();
-    
+
     public string GetEntryTitle(TimelineEntryDto entryDto)
     {
         if (SelectedProfile == null) return ApplicationLabels.Timeline_Title_Default;
@@ -43,11 +54,10 @@ public class TimelineViewModel
             _ => ApplicationLabels.Timeline_Title_Default
         };
     }
-    
-    
+
+
     public string GetEntryBody(TimelineEntryDto entry)
     {
-
         return entry.Body;
         // return entry.Type switch
         // {

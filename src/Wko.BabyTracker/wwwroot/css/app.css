@@ -107,3 +107,12 @@ a, .btn-link {
 .background-dark-50 {
     background-color: rgba(19, 21, 29, 0.5) !important;
 }
+
+.timeline-group {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.card + .timeline-group {
+    margin-top: 1em;
+}
