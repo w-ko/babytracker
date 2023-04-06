@@ -3,7 +3,14 @@
 }
 
 .card-rounded {
+    border: none;
     border-radius: 1em;
+}
+
+.card-header-rounded {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border: none;
 }
 
 .card-icon {
@@ -24,19 +31,39 @@
     background-color: var(--measure-primary);
 }
 
+.bg-measure--header {
+    background-color: var(--measure-primary-header);
+}
+
 .bg-feeding {
     background-color: var(--feeding-primary);
+}
+
+.bg-feeding--header {
+    background-color: var(--feeding-primary-header);
 }
 
 .bg-nappy {
     background-color: var(--nappy-primary);
 }
 
+.bg-nappy--header {
+    background-color: var(--nappy-primary-header);
+}
+
 .bg-sleep {
     background-color: var(--sleeping-primary);
 }
 
+.bg-sleep--header {
+    background-color: var(--sleeping-primary-header);
+}
+
 .bg-milestone {
     background-color: var(--milestone-primary);
+}
+
+.bg-milestone--header {
+    background-color: var(--milestone-primary-header);
 }
 

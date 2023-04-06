@@ -1,8 +1,8 @@
 @using Wko.BabyTracker.Core.Dtos.Timeline
 @using Wko.BabyTracker.Core.Shared.Enums
 @using Wko.BabyTracker.Core.Dtos.Profiles
-<div class="card card-rounded text-white py-1 @GetEntryStyle()">
-    <div class="card-header d-flex align-items-center">
+<div class="card card-rounded border-0 text-white @GetEntryStyle()">
+    <div class="card-header card-header-rounded d-flex align-items-center @GetEntryHeaderStyle()">
         <div class="card-icon text-black-50">@GetEntryIcon()</div>
         <div class="entry-title">@CardHeader</div>
     </div>
@@ -29,6 +29,19 @@
             TimelineEntryType.Measure => "bg-measure",
             TimelineEntryType.Milestone => "bg-milestone",
             TimelineEntryType.Nappy => "bg-nappy",
+            _ => "bg-light"
+            };
+    }
+    
+    private string GetEntryHeaderStyle()
+    {
+        return Type switch
+        {
+            TimelineEntryType.Feeding => "bg-feeding--header",
+            TimelineEntryType.Sleep => "bg-sleep--header",
+            TimelineEntryType.Measure => "bg-measure--header",
+            TimelineEntryType.Milestone => "bg-milestone--header",
+            TimelineEntryType.Nappy => "bg-nappy--header",
             _ => "bg-light"
             };
     }

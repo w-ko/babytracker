@@ -27,6 +27,7 @@ public class TimelineViewModel
 
     public IEnumerable<ProfileDto> AvailableProfiles { get; set; }
     public ProfileDto? SelectedProfile { get; set; }
+    public bool HasTimelineEntries => IsProfileSelected && TimelineEntries.Any();
     
     public string GetEntryTitle(TimelineEntryDto entryDto)
     {

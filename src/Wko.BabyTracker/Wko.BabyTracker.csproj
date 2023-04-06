@@ -30,6 +30,7 @@
     <ItemGroup>
       <Folder Include="Features\Timeline\Shared" />
       <Folder Include="wwwroot\js\dist" />
+      <Folder Include="wwwroot\svg" />
     </ItemGroup>
 
     <ItemGroup>

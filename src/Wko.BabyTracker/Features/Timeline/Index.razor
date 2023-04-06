@@ -6,6 +6,15 @@
 @if (!ViewModel.IsProfileSelected)
 {
     <div>Select a Profile</div>
+    @foreach(var profile in ViewModel.AvailableProfiles)
+    {
+        <a class="badge" href="timeline/@profile.Id">@profile.FirstName</a>
+    }
+}
+
+@if (!ViewModel.HasTimelineEntries)
+{
+    <img src="svg/no_profiles.svg" alt="No entries available" class="opacity-25"/>
 }
 
 @foreach (var entry in ViewModel.TimelineEntries)
@@ -22,9 +31,9 @@
     
     private TimelineViewModel ViewModel { get; set; } = new();
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnParametersSetAsync()
     {
         ViewModel = await TimelineViewModelBuilder.ForChildId(Id).Build(Dispatcher);
-        await base.OnInitializedAsync();
+        await base.OnParametersSetAsync();
     }
 }
