@@ -1,4 +1,4 @@
-namespace Wko.BabyTracker.Core.Events.UI;
+namespace Wko.BabyTracker.Core.Notification;
 
 /// <summary>
 /// Send UI Events

@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Wko.BabyTracker.Core.Commands;
-using Wko.BabyTracker.Core.Events.UI;
+using Wko.BabyTracker.Core.Notification;
 using Wko.BabyTracker.Core.Queries;
 
 namespace Wko.BabyTracker.Core.Services;
@@ -34,6 +34,9 @@ public sealed class Dispatcher : IDispatcher
 
     public async Task NotifyAsync<TNotification>(TNotification notification) where TNotification : INotification
     {
-        throw new NotImplementedException();
+        await using var scope = _serviceProvider.CreateAsyncScope();
+        var handler = scope.ServiceProvider.GetRequiredService<INotificationRegistrar>().GetHandler(notification);
+
+        await handler.HandleAsync(notification);
     }
 }

@@ -1,5 +1,5 @@
 using Wko.BabyTracker.Core.Commands;
-using Wko.BabyTracker.Core.Events.UI;
+using Wko.BabyTracker.Core.Notification;
 using Wko.BabyTracker.Core.Queries;
 
 namespace Wko.BabyTracker.Core.Services;

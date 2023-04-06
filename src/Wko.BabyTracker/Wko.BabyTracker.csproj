@@ -14,7 +14,6 @@
 
     <ItemGroup>
       <AdditionalFiles Include="Features\Home\Index.razor" />
-      <AdditionalFiles Include="Features\Home\SurveyPrompt.razor" />
       <AdditionalFiles Include="Features\Profiles\Components\EditProfile.razor" />
       <AdditionalFiles Include="Features\Profiles\Index.razor" />
       <AdditionalFiles Include="Features\Profiles\_Imports.razor" />
@@ -28,7 +27,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features\Shared\Events" />
       <Folder Include="Features\Timeline\Shared" />
       <Folder Include="wwwroot\js\dist" />
       <Folder Include="wwwroot\svg" />
