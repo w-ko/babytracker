@@ -1,6 +1,6 @@
 {
   "name": "BabyTracker",
-  "short_name": "BT",
+  "short_name": "BabyTracker",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#13151D",
