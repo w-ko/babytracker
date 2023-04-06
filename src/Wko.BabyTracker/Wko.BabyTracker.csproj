@@ -28,6 +28,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Features\Shared\Events" />
       <Folder Include="Features\Timeline\Shared" />
       <Folder Include="wwwroot\js\dist" />
       <Folder Include="wwwroot\svg" />
