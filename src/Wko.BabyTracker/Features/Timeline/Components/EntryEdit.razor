@@ -1,0 +1,25 @@
+
+@if (_shown == DialogShow.Shown)
+{
+    <div class="card">
+        <div class="card-body">
+            Edit
+        </div>
+    </div>
+}
+
+
+@code {
+    
+    private DialogShow _shown = DialogShow.Hidden;
+    
+    public void Show(Guid guid)
+    {
+        _shown = DialogShow.Shown;
+    }
+    
+    public void Close()
+    {
+        _shown = DialogShow.Hidden;
+    }
+}

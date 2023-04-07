@@ -22,12 +22,14 @@
     <div class="timeline-group">@group</div>
     @foreach (var entry in ViewModel.GetTimelineEntriesByGroup(group))
     {
-        <TimelineEntry Type="@entry.Type">
+        <TimelineEntry Type="@entry.Type" OnEdit="() => OnEdit(entry.Id)">
             <CardHeader>@ViewModel.GetEntryTitle(entry)</CardHeader>
             <CardBody>@ViewModel.GetEntryBody(entry)</CardBody>
         </TimelineEntry>
     }
 }
+
+<EntryEdit @ref="EditComponent"/>
 
 @code {
 
@@ -40,4 +42,13 @@
         ViewModel = await TimelineViewModelBuilder.ForChildId(Id).Build(Dispatcher);
         await base.OnParametersSetAsync();
     }
+
+    private EntryEdit? EditComponent;
+    
+    private void OnEdit(Guid id)
+    {
+        EditComponent?.Show(id);
+        Console.WriteLine($"Edit {id}");
+    }
+
 }
