@@ -1,3 +1,20 @@
+/* /Features/Shared/FloatingActionButton.razor.rz.scp.css */
+.fab[b-n0c71ugpvv] {
+    position: fixed;
+    bottom: 3em;
+    right: 3em;
+    width: 5em;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--fab-primary);
+}
+
+.fab-icon[b-n0c71ugpvv] {
+    font-size: 2em;
+}
 /* /Features/Shared/MainLayout.razor.rz.scp.css */
 .page[b-etxkjfn9lj] {
     position: relative;
