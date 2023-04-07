@@ -1,0 +1,16 @@
+.fab {
+    position: fixed;
+    bottom: 3em;
+    right: 3em;
+    width: 5em;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--fab-primary);
+}
+
+.fab-icon {
+    font-size: 2em;
+}

@@ -1,0 +1,11 @@
+<div class="fab" @onclick="OnClick">
+    <div class="fab-icon">@Icon()</div>
+</div>
+
+@code {
+    
+    [Parameter] public FabVisibility InitialState { get; set; } = FabVisibility.New;
+    [Parameter, EditorRequired] public EventCallback OnClick { get; set; }
+
+    private RenderFragment Icon() => InitialState == FabVisibility.New ? @<i class="fa-solid fa-plus"></i> : @<i class="fa-solid fa-angles-left"></i>;
+}

@@ -71,7 +71,7 @@
       </ServiceWorker>
     </ItemGroup>
 
-    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Target Name="PreBuild" BeforeTargets="Compile">
         <Exec Command="npm install" WorkingDirectory="wwwroot/js/src" />
         <Exec Command="npm run build" WorkingDirectory="wwwroot/js/src" />
     </Target>

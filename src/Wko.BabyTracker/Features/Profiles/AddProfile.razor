@@ -1,0 +1,45 @@
+@page "/profiles/new"
+@inject NavigationManager NavigationManager
+@inject IDispatcher Dispatcher
+
+<h3>Profiles - New Profile</h3>
+
+<div>
+    // Image
+</div>
+
+<div>
+    // Form
+    <EditForm Model="ViewModel" OnValidSubmit="HandleNewProfile">
+        <DataAnnotationsValidator/>
+        
+        <InputText @bind-Value="ViewModel.Name">Firstname</InputText>
+        <ValidationMessage For="() => ViewModel.Name"/>
+        <InputDate @bind-Value="ViewModel.BirthDate">Birthdate</InputDate>
+        <button type="submit">Save</button>
+    </EditForm>
+</div>
+
+<FloatingActionButton InitialState="FabVisibility.Back" OnClick="HandleFabClick"/>
+
+
+@code {
+
+    private NewProfileViewModel ViewModel { get; set; } = new();
+    private void HandleFabClick() => NavigationManager.NavigateTo("/profiles/");
+
+    private async Task HandleNewProfile()
+    {
+        try
+        {
+            await Dispatcher.ExecuteAsync(ViewModel.ToCommand());
+            NavigationManager.NavigateTo("/profiles/");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            await Dispatcher.NotifyAsync(new Notifications.Error(e.Message));
+        }
+    }
+
+}

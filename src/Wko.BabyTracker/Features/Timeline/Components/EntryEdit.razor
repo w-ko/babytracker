@@ -1,5 +1,5 @@
 
-@if (_shown == DialogShow.Shown)
+@if (_shown == ComponentVisibility.Shown)
 {
     <div class="card">
         <div class="card-body">
@@ -11,15 +11,17 @@
 
 @code {
     
-    private DialogShow _shown = DialogShow.Hidden;
+    private ComponentVisibility _shown = ComponentVisibility.Hidden;
     
     public void Show(Guid guid)
     {
-        _shown = DialogShow.Shown;
+        _shown = ComponentVisibility.Shown;
+        StateHasChanged();
     }
     
     public void Close()
     {
-        _shown = DialogShow.Hidden;
+        _shown = ComponentVisibility.Hidden;
+        StateHasChanged();
     }
 }
