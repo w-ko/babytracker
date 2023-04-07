@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-AusKQg3Ltoqm4CGZu+Du0AuzZq98WS6fh2SzrjrG0XM=",
+      "hash": "sha256-4LwF2pT6bblNrNLWIVqdqkDgxdDDC8hpY3CHF8is3IQ=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -189,7 +189,7 @@
       "url": "_framework\/Wko.BabyTracker.Core.dll"
     },
     {
-      "hash": "sha256-xXZdtTzGK5rxX6kXtXASMm8qG9r+s38g9jkSD0FVm6U=",
+      "hash": "sha256-bl5kPFbkpJD33Er+QRS6CXsaS6BUWN26QCL4+H2IjkM=",
       "url": "_framework\/Wko.BabyTracker.dll"
     },
     {
@@ -381,5 +381,5 @@
       "url": "svg\/no_profiles.svg"
     }
   ],
-  "version": "cuLfUEDC"
+  "version": "HUoAYs+Q"
 };

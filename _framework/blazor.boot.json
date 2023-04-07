@@ -45,7 +45,7 @@
       "System.Text.Encodings.Web.dll": "sha256-UEjjfXMneHaPyug9JKLS2e67fa3O+GSBW4uCeGJTTLk=",
       "System.Text.Json.dll": "sha256-gwhDCAFwGtWKesv2TH\/t+EI+88It11GgaS9yXJ+JR0c=",
       "Wko.BabyTracker.Core.dll": "sha256-OUURMRNFq55Z3QgJuXSYokXNUxZddcsU0niZF6P5Oz4=",
-      "Wko.BabyTracker.dll": "sha256-xXZdtTzGK5rxX6kXtXASMm8qG9r+s38g9jkSD0FVm6U="
+      "Wko.BabyTracker.dll": "sha256-bl5kPFbkpJD33Er+QRS6CXsaS6BUWN26QCL4+H2IjkM="
     },
     "extensions": null,
     "lazyAssembly": null,
